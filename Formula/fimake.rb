@@ -13,19 +13,19 @@ class Fimake < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.38/fimake-macos-arm64"
-      sha256 "e9f33ea9dfaa15245d3aa1387c338a8cd80e0ddc682621bce09a58d300be94ef"
+      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.39/fimake-macos-arm64"
+      sha256 "9ad79019950d89b35c22bd2251e2daab5efe42f5309eab9691d0ad821a7e5887"
     end
     on_intel do
-      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.38/fimake-macos-x64"
-      sha256 "236c046bf5ee05e1ad022245b0219d7608c5c62ee033571da2f5f18c9c3b296c"
+      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.39/fimake-macos-x64"
+      sha256 "a83533e8861efc7ba4d6595f7c0399120b948b5752a5f59b52a5291221daec05"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.38/fimake-linux-x64"
-      sha256 "50bfa4d66ef3e5582c4a87ef6130610f28e6c04264c3d729bed78ce7cedd601d"
+      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.39/fimake-linux-x64"
+      sha256 "5d04594f2450feab70a0528316c0a4143e926b831e96daa2b1a5ab4fe6e0d8fc"
     end
   end
 
@@ -36,6 +36,24 @@ class Fimake < Formula
       "fimake-linux-x64"
     end
     bin.install asset => "fimake"
+  end
+
+  service do
+    run [opt_bin/"fimake"]
+    environment_variables TRANSPORT: "streamable-http"
+    keep_alive true
+    log_path var/"log/fimake.log"
+    error_log_path var/"log/fimake.log"
+  end
+
+  def caveats
+    <<~EOS
+      Next steps (one-time):
+        fimake install-plugin        # register the Figma plugin (macOS)
+        brew services start fimake   # run the shared server in the background
+      Then add http://localhost:10101/mcp to your MCP client.
+      Run `fimake doctor` if anything looks off.
+    EOS
   end
 
   test do
