@@ -13,24 +13,24 @@ class Fimake < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.40/fimake-macos-arm64"
-      sha256 "3e206dc47937744aabaaa07cfa4c98b9c8a423f13e90b99183d0b74e428e84e0"
+      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.41/fimake-macos-arm64"
+      sha256 "ed0097dcacc4deab64078821dec1178f09bf2d263805a70a86fbc45e9baec570"
     end
     on_intel do
-      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.40/fimake-macos-x64"
-      sha256 "fd7f1194b12fe0b97fe6fb6934f0163fe79b90e47a7617de320cfadfd6b799b3"
+      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.41/fimake-macos-x64"
+      sha256 "f614a22976e2484e1438fddaa05f7d07b3b577c818b8e9269832bf4a89bf544e"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.40/fimake-linux-x64"
-      sha256 "bc33b6766287d6095b7f9c98805a7bc1bcbdf194d14356a9b39b59bac677d050"
+      url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.41/fimake-linux-x64"
+      sha256 "d10442010816a8768d42fb11751ecea0694bfb69af79ee8810a5138c7906859f"
     end
   end
 
   resource "manpage" do
-    url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.40/fimake.1"
+    url "https://github.com/chavisnguyen/FiMake/releases/download/v1.0.41/fimake.1"
     sha256 "ba643eca3e9ccfa693478c6c1e78a0c34de3dc8b085cb43b003afcc824057804"
   end
 
